@@ -5,6 +5,7 @@ import { AgentsModule } from './agents/agents.module';
 import { MarketsModule } from './markets/markets.module';
 import { ErrandsModule } from './errands/errands.module';
 import { ItemsModule } from './items/items.module';
+import { GenresModule } from './genres/genres.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ItemsModule } from './items/items.module';
     MarketsModule,
     ErrandsModule,
     ItemsModule,
+    GenresModule,
   ],
   controllers: [],
   providers: [],
