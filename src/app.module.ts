@@ -6,6 +6,7 @@ import { MarketsModule } from './markets/markets.module';
 import { ErrandsModule } from './errands/errands.module';
 import { ItemsModule } from './items/items.module';
 import { GenresModule } from './genres/genres.module';
+import { AlbumsModule } from './albums/albums.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { GenresModule } from './genres/genres.module';
     ErrandsModule,
     ItemsModule,
     GenresModule,
+    AlbumsModule,
   ],
   controllers: [],
   providers: [],
