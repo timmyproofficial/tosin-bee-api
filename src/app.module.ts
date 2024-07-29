@@ -7,6 +7,7 @@ import { ErrandsModule } from './errands/errands.module';
 import { ItemsModule } from './items/items.module';
 import { GenresModule } from './genres/genres.module';
 import { AlbumsModule } from './albums/albums.module';
+import { MediaModule } from './media/media.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { AlbumsModule } from './albums/albums.module';
     ItemsModule,
     GenresModule,
     AlbumsModule,
+    MediaModule,
   ],
   controllers: [],
   providers: [],
