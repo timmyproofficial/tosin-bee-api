@@ -10,11 +10,11 @@ export class MediaService {
   constructor(@InjectModel(Media.name) private mediaModel: Model<Media>) {}
 
   getMedia() {
-    return this.mediaModel.find();
+    return this.mediaModel.find().populate('genre').populate('album');
   }
 
   getMediaById(id: string) {
-    return this.mediaModel.findById(id);
+    return this.mediaModel.findById(id).populate('genre').populate('album');
   }
 
   createMedia(createMediaDto: CreateMediaDto) {
