@@ -3,6 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { GenresModule } from './genres/genres.module';
 import { AlbumsModule } from './albums/albums.module';
 import { MediaModule } from './media/media.module';
+import { EventsModule } from './events/events.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { MediaModule } from './media/media.module';
     GenresModule,
     AlbumsModule,
     MediaModule,
+    EventsModule,
   ],
   controllers: [],
   providers: [],
