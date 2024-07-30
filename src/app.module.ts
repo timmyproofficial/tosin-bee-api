@@ -4,6 +4,7 @@ import { GenresModule } from './genres/genres.module';
 import { AlbumsModule } from './albums/albums.module';
 import { MediaModule } from './media/media.module';
 import { EventsModule } from './events/events.module';
+import { FeedbackModule } from './feedback/feedback.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { EventsModule } from './events/events.module';
     AlbumsModule,
     MediaModule,
     EventsModule,
+    FeedbackModule,
   ],
   controllers: [],
   providers: [],
