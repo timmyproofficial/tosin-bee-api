@@ -20,8 +20,12 @@ export class MediaController {
   constructor(private mediaService: MediaService) {}
 
   @Get()
-  getMedia() {
-    return this.mediaService.getMedia();
+  async getMedia() {
+    const media = await this.mediaService.getMedia();
+    return {
+      count: media.length,
+      result: media,
+    };
   }
 
   @Get(':id')

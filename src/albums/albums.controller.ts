@@ -20,8 +20,12 @@ export class AlbumsController {
   constructor(private albumsService: AlbumsService) {}
 
   @Get()
-  getAlbums() {
-    return this.albumsService.getAlbums();
+  async getAlbums() {
+    const albums = await this.albumsService.getAlbums();
+    return {
+      count: albums.length,
+      result: albums,
+    };
   }
 
   @Get(':id')

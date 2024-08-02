@@ -20,8 +20,12 @@ export class EventsController {
   constructor(private eventsService: EventsService) {}
 
   @Get()
-  getEvents() {
-    return this.eventsService.getEvents();
+  async getEvents() {
+    const events = await this.eventsService.getEvents();
+    return {
+      count: events.length,
+      result: events,
+    };
   }
 
   @Get(':id')

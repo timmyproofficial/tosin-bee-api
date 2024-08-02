@@ -20,8 +20,12 @@ export class GenresController {
   constructor(private genresService: GenresService) {}
 
   @Get()
-  getGenres() {
-    return this.genresService.getGenres();
+  async getGenres() {
+    const genres = await this.genresService.getGenres();
+    return {
+      count: genres.length,
+      result: genres,
+    };
   }
 
   @Get(':id')

@@ -20,8 +20,12 @@ export class FeedbackController {
   constructor(private feedbackService: FeedbackService) {}
 
   @Get()
-  getFeedback() {
-    return this.feedbackService.getFeedback();
+  async getFeedback() {
+    const feedbacks = await this.feedbackService.getFeedback();
+    return {
+      count: feedbacks.length,
+      result: feedbacks,
+    };
   }
 
   @Get(':id')
