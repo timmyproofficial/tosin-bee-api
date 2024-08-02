@@ -1,20 +1,20 @@
-import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
+import { IsEmail, IsOptional, IsString } from 'class-validator';
 
 export class UpdateFeedbackDto {
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   fullName?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @IsEmail()
   email?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   phone?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   message?: string;
 }

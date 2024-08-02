@@ -1,40 +1,40 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 import { IsObjectId } from 'src/utils/isObjectId.validator';
 
 export class UpdateMediaDto {
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   title?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   img?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   appleLink?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   audiomackLink?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   boomplayLink?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   spotifyLink?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   youtubeLink?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsObjectId({ message: 'Genre ID must be a valid ObjectId' })
   genre?: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsObjectId({ message: 'Album ID must be a valid ObjectId' })
   album?: string;
 }
