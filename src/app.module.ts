@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { GenresModule } from './genres/genres.module';
 import { AlbumsModule } from './albums/albums.module';
 import { MediaModule } from './media/media.module';
@@ -8,9 +9,14 @@ import { FeedbackModule } from './feedback/feedback.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://timmyshow96:j4JaGnCEDVRENIsT@cluster0.z79rmwr.mongodb.net/tosinBeeDb?retryWrites=true&w=majority&appName=Cluster0',
-    ),
+    ConfigModule.forRoot({ isGlobal: true }),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (config: ConfigService) => ({
+        uri: config.get<string>('MONGODB_URI'),
+      }),
+    }),
     GenresModule,
     AlbumsModule,
     MediaModule,
